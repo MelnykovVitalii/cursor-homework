@@ -17,7 +17,7 @@ const totalPriceWithoutCoins = Math.trunc(PROCESSOR) + Math.trunc(MOTHERBOARD) +
 const totalPriceFloor = Math.floor(totalPriceWithoutCoins/100)*100;
 
 //Вся вартість округлена до сотень
-const totalpriceRound = Math.round(totalPrice/100)*100;
+const totalPriceRound = Math.round(totalPrice/100)*100;
 
 // Парна чи непарна сумма
 const isEven = (totalPriceFloor % 2 == 0);
@@ -46,7 +46,7 @@ list.innerHTML = `<ul>
                     <li>Мінімальна ціна: ${minValue}</li>
                     <li>Вартість всіх товарів: ${totalPrice}</li>
                     <li>Вартість без копійок та округлена в меньшу сторону: ${totalPriceFloor}</li>
-                    <li>Вся вартість округлена до сотень: ${totalpriceRound}</li>
+                    <li>Вся вартість округлена до сотень: ${totalPriceRound}</li>
                     <li>Чи парне число: ${isEven}</li>
                     <li>Решта з 500 грн: ${rest}</li>
                     <li>Середня ціна: ${averagePrice}</li>
