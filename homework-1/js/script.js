@@ -1,8 +1,8 @@
 const PROCESSOR = 90.2345;
 const MOTHERBOARD = 15.678;
 const VIDEOCARD = 123.965;
-
 const clientSum = 500;
+
 // Base
 
 // Максимальне та мінімальне значення
@@ -26,16 +26,16 @@ const isEven = (totalPriceFloor % 2 == 0);
 const rest = clientSum - totalPrice;
 
 // Середня ціна
-const averagePrice = (totalPrice/3).toFixed(2);
+const averagePrice = +((totalPrice/3).toFixed(2));
 
 // Знижка
 const discount = Math.trunc(Math.random()*100);
 
 // Сума знижки зі знижкою
-const priceWithDiscount = (totalPrice - ((totalPrice*discount)/100)).toFixed(2);
+const priceWithDiscount = +((totalPrice - ((totalPrice*discount)/100)).toFixed(2));
 
 // Прибуток
-const profit = ((totalPrice/2) - ((totalPrice*discount)/100)).toFixed(2);
+const profit = +(((totalPrice/2) - ((totalPrice*discount)/100)).toFixed(2));
 
 // Advanced
 
