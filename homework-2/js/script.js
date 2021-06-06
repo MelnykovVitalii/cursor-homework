@@ -7,11 +7,11 @@ btn.addEventListener("click", function (e) {
 	e.preventDefault();
 	let sum = 0;
 	// Отримуємо числа від користувача
-	let firstNumber = document.getElementById("first-number").value;
-	let secondNumber = document.getElementById("second-number").value;
+	let firstNumber = document.getElementById("first-number").value.trim();
+	let secondNumber = document.getElementById("second-number").value.trim();
 
 	// Виконуємо перевірку на пустий рядок
-	if ((firstNumber && secondNumber) !== "") {
+	if (firstNumber && secondNumber) {
 		firstNumber = Number(firstNumber);
 		secondNumber = Number(secondNumber);
 
@@ -25,6 +25,7 @@ btn.addEventListener("click", function (e) {
 				// Перевіряємо число на парність, якщо парне то пропускаємо його
 				if (checkBox.checked && i % 2 == 0) continue;
 				sum += i;
+				console.log(checkBox.checked);
 			}
 			resultBlock.innerHTML = `<span class="done">Сума = ${sum}</span>`;
 		} else
