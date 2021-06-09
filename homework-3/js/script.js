@@ -19,19 +19,55 @@
 // maxDigit(123456);
 
 // Створити функцію getMaxDigit(number) – яка отримує будь-яке число та виводить найбільшу цифру в цьому числі.
-function getMaxDigit(...number) {
-  let arr = [];
-  arr = Array.from(String(number));
-  // console.log(arr);
-  return console.log(Math.max(...arr));
+// function getMaxDigit(...number) {
+// 	let arr = [];
+// 	arr = Array.from(String(number));
+// 	// console.log(arr);
+// 	return console.log(Math.max(...arr));
+// }
+
+// Функція визначення максимальної цифри
+function getMaxDigit(value) {
+	if (isNaN(value) || value.trim() === "") {
+		return "Помилка вводу";
+	}
+
+	const digits = value.split("");
+	return Math.max(...digits);
 }
 
-getMaxDigit(8578986);
-const num = 3 % 2;
-// const num2 = Number(num);
+// const a = "45459755";
+// console.log(getMaxDigit(a));
 
-if (6 % 2) {
-  console.log("sdfsfs0");
+// Функція форматування імені
+
+function setFirstLetterToUpper(name) {
+	if (!name || name.trim() === "") {
+		return "Помилка вводу";
+	}
+	name = name.trim();
+	name = name[0].toUpperCase() + name.slice(1).toLowerCase();
+	return name;
 }
 
-console.log(typeof num);
+// const ads = "   d sdf ghf    ";
+// console.log(setFirstLetterToUpper(ads));
+
+function calculateRevenue(salary) {
+	if (isNaN(salary) || Number(salary) === 0) {
+		return "Помилка вводу";
+	}
+
+	const tax = (Number(salary) * 19.5) / 100;
+	const revenue = Number(salary) - tax;
+	return revenue;
+}
+
+// const r = "";
+// console.log(calculateRevenue(r));
+
+// function getRandomNumber(num1, num2) {
+// 	if (isNaN(num1) || isNaN(num2)) {
+// 		return "Помилка вводу";
+// 	}
+// }
