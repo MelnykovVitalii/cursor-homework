@@ -26,7 +26,7 @@
 // 	return console.log(Math.max(...arr));
 // }
 
-// Функція визначення максимальної цифри
+// 1.Функція визначення максимальної цифри
 function getMaxDigit(value) {
 	if (isNaN(value) || value.trim() === "") {
 		return "Помилка вводу";
@@ -39,8 +39,7 @@ function getMaxDigit(value) {
 // const a = "45459755";
 // console.log(getMaxDigit(a));
 
-// Функція форматування імені
-
+// 3.Функція форматування імені
 function setFirstLetterToUpper(name) {
 	if (!name || name.trim() === "") {
 		return "Помилка вводу";
@@ -53,6 +52,7 @@ function setFirstLetterToUpper(name) {
 // const ads = "   d sdf ghf    ";
 // console.log(setFirstLetterToUpper(ads));
 
+// 4.Створити функцію, яка вираховує суму, що залишається після оплати податку від зарабітньої плати.
 function calculateRevenue(salary) {
 	if (isNaN(salary) || Number(salary) === 0) {
 		return "Помилка вводу";
@@ -63,11 +63,43 @@ function calculateRevenue(salary) {
 	return revenue;
 }
 
-// const r = "";
-// console.log(calculateRevenue(r));
+// 5.Створити функцію, яка повертає випадкове ціле число в діапазоні від N до M.
+function getRandomNumber(num1, num2) {
+	if (
+		(isNaN(num1) || num1.trim() === "") &&
+		(isNaN(num2) || num2.trim() === "")
+	) {
+		return "Помилка вводу";
+	}
 
-// function getRandomNumber(num1, num2) {
-// 	if (isNaN(num1) || isNaN(num2)) {
-// 		return "Помилка вводу";
-// 	}
-// }
+	num1 = Number(num1);
+	num2 = Number(num2);
+	const min = Math.min(num1, num2);
+	const max = Math.max(num1, num2);
+	const randomNumber = Math.random() * (max - min) + min;
+	return Math.round(randomNumber);
+}
+
+// const a = "4";
+// const n = "6";
+
+// console.log(getRandomNumber(a, n));
+
+// 6.Створити функцію, яка рахує скільки разів певна буква повторюється в слові.
+function getCountLetter(char, string) {
+	if ((!char || char.trim() === "") && (!string || string.trim() === "")) {
+		return "Помилка вводу";
+	}
+
+	let countLetter = string.match(new RegExp(char, "gi"));
+	return countLetter === null ? (countLetter = 0) : countLetter.length;
+}
+
+// const r = " tr";
+// const u = " r";
+// console.log(getCountLetter(u, r));
+
+// const str = "ggdgHhdjguhh";
+// const char = "g";
+
+// console.log(str.match(new RegExp(char, "gi")));
