@@ -16,59 +16,291 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			<section class="card task1">
-				<div class="card-head">
-					<p class="title">Task1</p>
-					<p class="task-title">
-						Створити функцію getMaxDigit(number) – яка отримує будь-яке число та
-						виводить найбільшу цифру в цьому числі.
-					</p>
-				</div>
-				<div class="card-body">
-					<div class="task-name-block">
-						<span>Введіть число</span>
+			<div class="row">
+				<section class="card task1">
+					<div class="card-head">
+						<p class="title">Task1</p>
+						<p class="task-title">Знайти найбільшу цифру в числі.</p>
 					</div>
-					<div class="input-block">
-						<input type="number" />
+					<div class="card-body">
+						<div class="task-name-block">
+							<span>Введіть число</span>
+						</div>
+						<div class="input-block">
+							<input type="number" id="input1_for_btn1" />
+						</div>
+						<div class="block-button">
+							<button class="button btn1" type="button">
+								Отримати результат
+							</button>
+						</div>
 					</div>
-					<div class="block-button">
-						<button class="button" type="button">Отримати результат</button>
+					<div class="card-footer">
+						<div class="result-block res1"></div>
 					</div>
-				</div>
-				<div class="card-footer">
-					<div class="result-block">
-						<span>результат</span>
-					</div>
-				</div>
-			</section>
+				</section>
 
-			<section class="card task1">
-				<div class="card-head">
-					<p>Task1</p>
-					<p>
-						Створити функцію getMaxDigit(number) – яка отримує будь-яке число та
-						виводить найбільшу цифру в цьому числі.
-					</p>
-				</div>
-				<div class="card-body">
-					<label for="">Введіть число</label>
-					<input type="number" />
-				</div>
-			</section>
+				<section class="card task2">
+					<div class="card-head">
+						<p class="title">Task2</p>
+						<p class="task-title">Визначити ступінь числа.</p>
+					</div>
+					<div class="card-body">
+						<div class="task-name-block">
+							<span>Введіть число</span>
+						</div>
+						<div class="input-block">
+							<input type="number" id="input1_for_btn2" />
+						</div>
+						<div class="task-name-block">
+							<span>Введіть ступінь числа</span>
+						</div>
+						<div class="input-block">
+							<input type="number" id="input2_for_btn2" />
+						</div>
+						<div class="block-button">
+							<button class="button btn2" type="button">
+								Отримати результат
+							</button>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="result-block res2"></div>
+					</div>
+				</section>
 
-			<section class="card task1">
-				<div class="card-head">
-					<p>Task1</p>
-					<p>
-						Створити функцію getMaxDigit(number) – яка отримує будь-яке число та
-						виводить найбільшу цифру в цьому числі.
-					</p>
-				</div>
-				<div class="card-body">
-					<label for="">Введіть число</label>
-					<input type="number" />
-				</div>
-			</section>
+				<section class="card task3">
+					<div class="card-head">
+						<p class="title">Task3</p>
+						<p class="task-title">Відформатувати ім'я.</p>
+					</div>
+					<div class="card-body">
+						<div class="task-name-block">
+							<span>Введіть слово</span>
+						</div>
+						<div class="input-block">
+							<input type="text" id="input1_for_btn3" />
+						</div>
+						<div class="block-button">
+							<button class="button btn3" type="button">
+								Отримати результат
+							</button>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="result-block res3"></div>
+					</div>
+				</section>
+
+				<section class="card task4">
+					<div class="card-head">
+						<p class="title">Task4</p>
+						<p class="task-title">Сума після оплати податку.</p>
+					</div>
+					<div class="card-body">
+						<div class="task-name-block">
+							<span>Введіть число</span>
+						</div>
+						<div class="input-block">
+							<input type="number" id="input1_for_btn4" />
+						</div>
+						<div class="block-button">
+							<button class="button btn4" type="button">
+								Отримати результат
+							</button>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="result-block res4"></div>
+					</div>
+				</section>
+
+				<section class="card task5">
+					<div class="card-head">
+						<p class="title">Task5</p>
+						<p class="task-title">Випадкове число в заданому діапазоні.</p>
+					</div>
+					<div class="card-body">
+						<div class="task-name-block">
+							<span>Введіть перше число</span>
+						</div>
+						<div class="input-block">
+							<input type="number" id="input1_for_btn5" />
+						</div>
+						<div class="task-name-block">
+							<span>Введіть друге число</span>
+						</div>
+						<div class="input-block">
+							<input type="number" id="input2_for_btn5" />
+						</div>
+						<div class="block-button">
+							<button class="button btn5" type="button">
+								Отримати результат
+							</button>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="result-block res5"></div>
+					</div>
+				</section>
+
+				<section class="card task6">
+					<div class="card-head">
+						<p class="title">Task6</p>
+						<p class="task-title">
+							Функція, яка рахує скільки разів певна буква повторюється в слові.
+						</p>
+					</div>
+					<div class="card-body">
+						<div class="task-name-block">
+							<span>Введіть букву</span>
+						</div>
+						<div class="input-block">
+							<input type="text" id="input1_for_btn6" />
+						</div>
+						<div class="task-name-block">
+							<span>Введіть слово</span>
+						</div>
+						<div class="input-block">
+							<input type="text" id="input2_for_btn6" />
+						</div>
+						<div class="block-button">
+							<button class="button btn6" type="button">
+								Отримати результат
+							</button>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="result-block res6"></div>
+					</div>
+				</section>
+
+				<section class="card task7">
+					<div class="card-head">
+						<p class="title">Task7</p>
+						<p class="task-title">Конвертування валюти $ -> UAN, UAN -> $</p>
+					</div>
+					<div class="card-body">
+						<div class="task-name-block">
+							<span>Введіть число та валюту (123$ чи 123UAN(uan))</span>
+						</div>
+						<div class="input-block">
+							<input type="text" id="input1_for_btn7" />
+						</div>
+						<div class="block-button">
+							<button class="button btn7" type="button">
+								Отримати результат
+							</button>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="result-block res7"></div>
+					</div>
+				</section>
+
+				<section class="card task8">
+					<div class="card-head">
+						<p class="title">Task8</p>
+						<p class="task-title">
+							Генерація випадкового паролю (максимальная довжина 8 символів).
+						</p>
+					</div>
+					<div class="card-body">
+						<div class="task-name-block">
+							<span>Введіть довжину паролю</span>
+						</div>
+						<div class="input-block">
+							<input type="number" id="input1_for_btn8" value="8" />
+						</div>
+						<div class="block-button">
+							<button class="button btn8" type="button">
+								Отримати результат
+							</button>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="result-block res8"></div>
+					</div>
+				</section>
+
+				<section class="card task9">
+					<div class="card-head">
+						<p class="title">Task9</p>
+						<p class="task-title">Функція яка видаляє всі букви з речення.</p>
+					</div>
+					<div class="card-body">
+						<div class="task-name-block">
+							<span>Введіть букву</span>
+						</div>
+						<div class="input-block">
+							<input type="text" id="input1_for_btn9" />
+						</div>
+						<div class="task-name-block">
+							<span>Введіть слово</span>
+						</div>
+						<div class="input-block">
+							<input type="text" id="input2_for_btn9" />
+						</div>
+						<div class="block-button">
+							<button class="button btn9" type="button">
+								Отримати результат
+							</button>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="result-block res9"></div>
+					</div>
+				</section>
+
+				<section class="card task10">
+					<div class="card-head">
+						<p class="title">Task10</p>
+						<p class="task-title">Перевірка слова на паліндром.</p>
+					</div>
+					<div class="card-body">
+						<div class="task-name-block">
+							<span>Введіть слово</span>
+						</div>
+						<div class="input-block">
+							<input type="text" id="input1_for_btn10" />
+						</div>
+						<div class="block-button">
+							<button class="button btn10" type="button">
+								Отримати результат
+							</button>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="result-block res10"></div>
+					</div>
+				</section>
+
+				<section class="card task11">
+					<div class="card-head">
+						<p class="title">Task11</p>
+						<p class="task-title">
+							Функція яка видалить з речення букви, які зустрічаються більше 1
+							разу
+						</p>
+					</div>
+					<div class="card-body">
+						<div class="task-name-block">
+							<span>Введіть слово</span>
+						</div>
+						<div class="input-block">
+							<input type="text" id="input1_for_btn11" />
+						</div>
+						<div class="block-button">
+							<button class="button btn11" type="button">
+								Отримати результат
+							</button>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="result-block res11"></div>
+					</div>
+				</section>
+			</div>
 		</div>
 		<script src="js/script.js"></script>
 	</body>

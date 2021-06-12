@@ -1,9 +1,15 @@
+body {
+	background-color: #bdbdbd;
+}
 .wrapper {
 	max-width: 1180px;
 	width: 100%;
 	padding: 0px 10px;
 	margin: 0 auto;
 	box-sizing: border-box;
+}
+
+.row {
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -24,15 +30,21 @@
 }
 .card {
 	text-align: center;
-	flex: 1 0 50%;
-	max-width: 50%;
+	flex: 1 1 46%;
 	background-color: #546e7a;
 	margin: 20px;
 	border: 2px solid #546e7a;
 }
 
 .task-name-block {
-	padding: 20px 0px;
+	padding: 6px 0px;
+}
+.task-name-block span {
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	padding: 0px 10px;
+	color: #fff;
+	font-weight: 500;
 }
 .input-block input {
 	box-sizing: border-box;
@@ -48,6 +60,14 @@
 	cursor: pointer;
 	border-radius: 10px;
 	margin: 10px 0px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	transition: 0.4s;
+}
+.button:hover {
+	background-color: #4caf50;
+	color: #fff;
+	transition: 0.4s;
 }
 .button,
 .button:focus,
@@ -61,4 +81,10 @@
 	flex-direction: column;
 	justify-content: center;
 	height: 60px;
+}
+.result-block span {
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	padding: 0px 10px;
+	color: #fff;
 }
