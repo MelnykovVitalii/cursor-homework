@@ -1,0 +1,12 @@
+.content {
+	max-width: 1170px;
+	width: 100%;
+	padding: 0px 15px;
+	text-align: center;
+	box-sizing: border-box;
+}
+.content span {
+	font-family: "Baloo Tammudu 2", cursive;
+	font-size: 40px;
+	color: #4caf50;
+}
