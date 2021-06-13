@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 	margin: 0 auto;
 }
-.content span {
+.content p {
 	font-family: "Baloo Tammudu 2", cursive;
 	font-size: 40px;
 	color: #4caf50;
