@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .content {
 	padding: 0px 15px;
 	text-align: center;
@@ -9,3 +10,16 @@
 	font-size: 40px;
 	color: #4caf50;
 }
+=======
+.content {
+	padding: 0px 15px;
+	text-align: center;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+.content span {
+	font-family: "Baloo Tammudu 2", cursive;
+	font-size: 40px;
+	color: #4caf50;
+}
+>>>>>>> d8df273654f9924f514ba92393ba30644ba6c3d4
