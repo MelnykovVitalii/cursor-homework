@@ -1,22 +1,13 @@
 // 1.Функція визначення максимальної цифри
-function getMaxDigit(value) {
-	if (isNaN(value) || value.trim() === "") {
-		return "Помилка вводу";
-	}
-
-	const digits = value.split("");
-	return Math.max(...digits);
-}
+const getMaxDigit = (number) => {
+	return (number = !number
+		? "Помилка вводу"
+		: Math.max(...Array.from(String(number)).map((item) => parseInt(item))));
+};
 
 // 2.Створити функцію, яка визначає ступінь числа. Не використовуючи Math.pow та **. Використовуйте цикл
 function numberInPower(number, pow) {
-	if (
-		isNaN(number) ||
-		number.trim() === "" ||
-		isNaN(pow) ||
-		pow.trim() === "" ||
-		!Number.isInteger(Number(pow))
-	) {
+	if (!Number.isInteger(Number(pow)) || !number || !pow) {
 		return "Помилка! Вводити потрібно тільки цифри, ступінь повинна бути цілим числом.";
 	}
 
@@ -44,7 +35,7 @@ function setFirstLetterToUpper(name) {
 
 // 4.Створити функцію, яка вираховує суму, що залишається після оплати податку від зарабітньої плати.
 function calculateRevenue(salary) {
-	if (isNaN(salary) || Number(salary) === 0) {
+	if (!Number(salary)) {
 		return "Помилка вводу";
 	}
 
@@ -55,15 +46,15 @@ function calculateRevenue(salary) {
 }
 
 // 5.Створити функцію, яка повертає випадкове ціле число в діапазоні від N до M.
-function getRandomNumber(num1, num2) {
-	if (isNaN(num1) || num1.trim() === "" || isNaN(num2) || num2.trim() === "") {
+function getRandomNumber(firstnumber, secondnumber) {
+	if (!Number.isInteger(firstnumber) || !Number.isInteger(secondnumber)) {
 		return "Помилка вводу";
 	}
 
-	num1 = Number(num1);
-	num2 = Number(num2);
-	const min = Math.min(num1, num2);
-	const max = Math.max(num1, num2);
+	firstnumber = Number(firstnumber);
+	secondnumber = Number(secondnumber);
+	const min = Math.min(firstnumber, secondnumber);
+	const max = Math.max(firstnumber, secondnumber);
 	const randomNumber = Math.random() * (max - min) + min;
 
 	return Math.round(randomNumber);
@@ -180,110 +171,4 @@ function deleteDuplicateLetter(string) {
 		: newString;
 }
 
-const btn1 = document.querySelector(".btn1");
-
-btn1.addEventListener("click", () => {
-	const input1 = document.querySelector("#input1_for_btn1");
-	const resutl1 = document.querySelector(".res1");
-	resutl1.innerHTML = `<span>${getMaxDigit(input1.value)}</span>`;
-});
-
-const btn2 = document.querySelector(".btn2");
-
-btn2.addEventListener("click", () => {
-	const input1 = document.querySelector("#input1_for_btn2");
-	const input2 = document.querySelector("#input2_for_btn2");
-	const resutl2 = document.querySelector(".res2");
-
-	resutl2.innerHTML = `<span>${numberInPower(
-		input1.value,
-		input2.value
-	)}</span>`;
-});
-
-const btn3 = document.querySelector(".btn3");
-
-btn3.addEventListener("click", () => {
-	const input1 = document.querySelector("#input1_for_btn3");
-	const resutl3 = document.querySelector(".res3");
-	resutl3.innerHTML = `<span>${setFirstLetterToUpper(input1.value)}</span>`;
-});
-
-const btn4 = document.querySelector(".btn4");
-
-btn4.addEventListener("click", () => {
-	const input1 = document.querySelector("#input1_for_btn4");
-	const resutl4 = document.querySelector(".res4");
-	resutl4.innerHTML = `<span>${calculateRevenue(input1.value)}</span>`;
-});
-
-const btn5 = document.querySelector(".btn5");
-
-btn5.addEventListener("click", () => {
-	const input1 = document.querySelector("#input1_for_btn5");
-	const input2 = document.querySelector("#input2_for_btn5");
-	const resutl5 = document.querySelector(".res5");
-
-	resutl5.innerHTML = `<span>${getRandomNumber(
-		input1.value,
-		input2.value
-	)}</span>`;
-});
-
-const btn6 = document.querySelector(".btn6");
-
-btn6.addEventListener("click", () => {
-	const input1 = document.querySelector("#input1_for_btn6");
-	const input2 = document.querySelector("#input2_for_btn6");
-	const resutl6 = document.querySelector(".res6");
-
-	resutl6.innerHTML = `<span>${getCountLetter(
-		input1.value,
-		input2.value
-	)}</span>`;
-});
-
-const btn7 = document.querySelector(".btn7");
-
-btn7.addEventListener("click", () => {
-	const input1 = document.querySelector("#input1_for_btn7");
-	const resutl7 = document.querySelector(".res7");
-	resutl7.innerHTML = `<span>${convertCurrency(input1.value)}</span>`;
-});
-
-const btn8 = document.querySelector(".btn8");
-
-btn8.addEventListener("click", () => {
-	const input1 = document.querySelector("#input1_for_btn8");
-	const resutl8 = document.querySelector(".res8");
-	resutl8.innerHTML = `<span>${getRandomPassword(input1.value)}</span>`;
-});
-
-const btn9 = document.querySelector(".btn9");
-
-btn9.addEventListener("click", () => {
-	const input1 = document.querySelector("#input1_for_btn9");
-	const input2 = document.querySelector("#input2_for_btn9");
-	const resutl9 = document.querySelector(".res9");
-
-	resutl9.innerHTML = `<span>${deleteLetters(
-		input1.value,
-		input2.value
-	)}</span>`;
-});
-
-const btn10 = document.querySelector(".btn10");
-
-btn10.addEventListener("click", () => {
-	const input1 = document.querySelector("#input1_for_btn10");
-	const resutl10 = document.querySelector(".res10");
-	resutl10.innerHTML = `<span>${isPalyndrom(input1.value)}</span>`;
-});
-
-const btn11 = document.querySelector(".btn11");
-
-btn11.addEventListener("click", () => {
-	const input1 = document.querySelector("#input1_for_btn11");
-	const resutl11 = document.querySelector(".res11");
-	resutl11.innerHTML = `<span>${deleteDuplicateLetter(input1.value)}</span>`;
-});
+// export { getMaxDigit, numberInPower };
