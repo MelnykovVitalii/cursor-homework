@@ -11,10 +11,11 @@ const marks = [4, 5, 5, 3, 4, 5];
 // У вас повинен вийти вкладений масив з парами студентів: [["Олександр", "Олена"], [..], [...]];
 
 function getPairs(students) {
+  const temp = [...students];
   const pairs = [];
 
-  for (let i = 0; i < students.length; i = i + 2) {
-    pairs.push(students.slice(i, i + 2));
+  for (let i = 0; i < temp.length; i = i + 2) {
+    pairs.push(temp.slice(i, i + 2));
   }
 
   return pairs;
