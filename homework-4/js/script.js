@@ -10,13 +10,6 @@ const marks = [4, 5, 5, 3, 4, 5];
 // 1.Розділіть студентів на пари(хлопець + дівчина) для работи над проєктом.
 // У вас повинен вийти вкладений масив з парами студентів: [["Олександр", "Олена"], [..], [...]];
 
-// function getPairs(students){
-//   return [
-//          [students[0], students[2]]
-//          [students[1], students[3]]
-//          [students[4], students[5]]
-//         ]
-// }
 function getPairs(students) {
 	const pairs = [];
 
