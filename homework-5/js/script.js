@@ -1,6 +1,7 @@
 // 1.Створіть функцію getRandomArray(length, min, max) – яка повертає масив випадкових цілих чисел.
 // У функції є параметри: length - довжина масиву, min – мінімальне значення цілого числа, max – максимальне значення цілого числа.
 function getRandomArray(length, min, max) {
+	if (!length || !min || !max) return "Помилка вводу";
 	const randomArray = [];
 	for (let i = 0; i < length; i++) {
 		const randomNumber = Math.round(Math.random() * (max - min) + min);
@@ -9,10 +10,14 @@ function getRandomArray(length, min, max) {
 	return randomArray;
 }
 
+console.log(getRandomArray(6, 5, 15));
+
 // 2.Створіть функцію getModa(...numbers) – яка вираховує моду всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 function getModa(...numbers) {
 	let count = 0;
-	const sortArray = numbers.sort((a, b) => a - b);
+	const sortArray = numbers
+		.filter((number) => Number.isInteger(number))
+		.sort((a, b) => a - b);
 
 	const countArray = [];
 
@@ -23,7 +28,6 @@ function getModa(...numbers) {
 		countArray.push(count);
 	});
 	const maxCount = Math.max(...countArray);
-	console.log(maxCount);
 	const moda = [];
 	countArray.forEach((item, i) => {
 		if (item == maxCount) {
@@ -31,11 +35,11 @@ function getModa(...numbers) {
 		}
 	});
 
-	return countArray;
+	return moda;
 }
 
-// console.log(getModa(3, 5, 6, 7, 6, 6, 5, 5));
-// console.log(getRandomArray(16, 1, 9));
+console.log(getModa(3, 5, 6.5, 7, 6, 6, 5, 5));
+
 // 3.Створіть функцію getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 function getAverage(...numbers) {
 	const filterArray = numbers.filter((number) => Number.isInteger(number));
@@ -44,13 +48,15 @@ function getAverage(...numbers) {
 	return total / filterArray.length;
 }
 
-// console.log(getAverage(10, 2, 3, 2.5));
+console.log(getAverage(10, 2, 3, 2.5));
 
 // 5.Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 function filterEvenNumbers(...numbers) {
 	const evenNumbers = numbers.filter((number) => number % 2 != 0);
 	return evenNumbers;
 }
+
+console.log(filterEvenNumbers(2, 7, 5));
 
 // 4.Створіть функцію getMedian(...numbers) – яка рахує медіану всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 function getMedian(...numbers) {
@@ -72,9 +78,8 @@ function getMedian(...numbers) {
 }
 
 console.log(getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
-// console.log(filterEvenNumbers(1, 4, 6, 7, 11, 20));
-// 6.Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0
 
+// 6.Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0
 function countPositiveNumbers(...numbers) {
 	const countNumbers = numbers.reduce((count, number) => {
 		if (number > 0) {
@@ -86,17 +91,16 @@ function countPositiveNumbers(...numbers) {
 	return countNumbers;
 }
 
-// console.log(countPositiveNumbers(4, -6, 7, -4, 7, 0, 3));
+console.log(countPositiveNumbers(4, -6, 7, -4, 7, 0, 3));
 
 // 7.Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5
-
 function getDividedByFive(...numbers) {
-	if (!numbers) return "Помилка вводу!";
+	if (!numbers.length) return "Помилка вводу!";
 	const dividedByFive = numbers.filter((number) => number % 5 == 0);
 	return dividedByFive;
 }
 
-// console.log(getDividedByFive(3, 5, 10, 15, 7, 8, 4));
+console.log(getDividedByFive(5, 4, 81, 75));
 
 // 8.Створіть функцію replaceBadWords(string) – яка 1) розіб'є фразу на слова, 2) замінить погані слова на зірочки (*).
 // При вирішенні цього завдання необхідно розбити масив на слова за допомогою функції .split(" "),
@@ -129,10 +133,10 @@ console.log(replaceBadWords("Are you fucking kidding?", ""));
 function divideByThree(string) {
 	if (!string) return "Нічого не введено!";
 	const stringFiltered = string.toLowerCase().replace(/ +/g, "");
-	const arr = [];
+	const divideByThreeArr = [];
 	for (let i = 0; i < stringFiltered.length; i = i + 3) {
-		arr.push(stringFiltered.slice(i, i + 3));
+		divideByThreeArr.push(stringFiltered.slice(i, i + 3));
 	}
-	return arr;
+	return divideByThreeArr;
 }
-console.log(divideByThree("dsfsfs hggh "));
+console.log(divideByThree("live"));
