@@ -81,16 +81,14 @@ console.log(getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 // 6.Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0
 function countPositiveNumbers(...numbers) {
 	const countNumbers = numbers.reduce((count, number) => {
-		if (number > 0) {
-			count++;
-		}
+		number > 0 ? count++ : count;
 		return count;
 	}, 0);
 
 	return countNumbers;
 }
 
-console.log(countPositiveNumbers(4, -6, 7, -4, 7, 0, 3));
+console.log(countPositiveNumbers(4, -6, 7, -4, 7, 0));
 
 // 7.Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5
 function getDividedByFive(...numbers) {
