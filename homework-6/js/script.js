@@ -28,9 +28,6 @@ const students = [
 	},
 ];
 
-// const f = 2;
-// console.log(students[f]);
-
 // 1.Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів для конкретного студента.
 // Зверніть увагу – назву предмету необхідно повертати з великої літери, а _ – замінити на пробіл
 function getSubjects(student) {
