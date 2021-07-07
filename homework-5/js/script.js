@@ -2,12 +2,9 @@
 // У функції є параметри: length - довжина масиву, min – мінімальне значення цілого числа, max – максимальне значення цілого числа.
 function getRandomArray(length, min, max) {
 	if (!length || !min || !max) return "Помилка вводу";
-	const randomArray = [];
-	for (let i = 0; i < length; i++) {
-		const randomNumber = Math.round(Math.random() * (max - min) + min);
-		randomArray.push(randomNumber);
-	}
-	return randomArray;
+	return Array.from({ length }, () =>
+		Math.round(Math.random() * (max - min) + min)
+	);
 }
 
 console.log(getRandomArray(6, 5, 15));
@@ -41,10 +38,11 @@ console.log(getModa(3, 3, 5, 5));
 
 // 3.Створіть функцію getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 function getAverage(...numbers) {
-	const filterArray = numbers.filter((number) => Number.isInteger(number));
-	const total = filterArray.reduce((prev, number) => prev + number);
-
-	return total / filterArray.length;
+	return (
+		numbers
+			.filter((number) => Number.isInteger(number))
+			.reduce((prev, number) => prev + number) / numbers.length
+	);
 }
 
 console.log(getAverage(10, 2, 3, 2.5));
@@ -80,12 +78,8 @@ console.log(getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
 // 6.Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0
 function countPositiveNumbers(...numbers) {
-	const countNumbers = numbers.reduce((count, number) => {
-		number > 0 ? count++ : count;
-		return count;
-	}, 0);
-
-	return countNumbers;
+	const countNumbers = numbers.filter((number) => number > 0);
+	return countNumbers.length;
 }
 
 console.log(countPositiveNumbers(4, -6, 7, -4, 7, 0));
@@ -93,8 +87,7 @@ console.log(countPositiveNumbers(4, -6, 7, -4, 7, 0));
 // 7.Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5
 function getDividedByFive(...numbers) {
 	if (!numbers.length) return "Помилка вводу!";
-	const dividedByFive = numbers.filter((number) => number % 5 == 0);
-	return dividedByFive;
+	return (dividedByFive = numbers.filter((number) => number % 5 == 0));
 }
 
 console.log(getDividedByFive(5, 4, 81, 75));
