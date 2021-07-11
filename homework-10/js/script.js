@@ -10,6 +10,8 @@ function stopActiveAudio() {
 }
 
 function play(keyIdentifier) {
+	const key = document.getElementById(`${keyIdentifier}`);
+	key.classList.add("active");
 	const audio = document.querySelector(`.${keyIdentifier}`);
 	audio.play();
 }
@@ -19,14 +21,12 @@ document.addEventListener("keydown", (e) => {
 	const key = document.getElementById(`${keyIdentifier}`);
 	if (!key) return;
 	stopActiveAudio();
-	key.classList.add("active");
 	play(keyIdentifier);
 });
 
 keys.forEach((key) => {
 	key.addEventListener("click", () => {
 		stopActiveAudio();
-		key.classList.add("active");
 		play(key.id);
 	});
 });
