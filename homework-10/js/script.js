@@ -2,8 +2,9 @@ const keys = document.querySelectorAll(".key");
 
 function stopActiveAudio() {
 	keys.forEach((key) => {
+		const audio = document.querySelector(`audio.${key.id}`);
+
 		key.classList.remove("active");
-		const audio = document.querySelector(`.${key.id}`);
 		audio.pause();
 		audio.currentTime = 0;
 	});
@@ -11,14 +12,16 @@ function stopActiveAudio() {
 
 function play(keyIdentifier) {
 	const key = document.getElementById(`${keyIdentifier}`);
+	const audio = document.querySelector(`audio.${keyIdentifier}`);
+
 	key.classList.add("active");
-	const audio = document.querySelector(`.${keyIdentifier}`);
 	audio.play();
 }
 
 document.addEventListener("keydown", (e) => {
 	const keyIdentifier = e.code;
 	const key = document.getElementById(`${keyIdentifier}`);
+
 	if (!key) return;
 	stopActiveAudio();
 	play(keyIdentifier);
