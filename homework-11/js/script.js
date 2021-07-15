@@ -1,21 +1,20 @@
 async function getRandomChinese(length) {
-	let chinaString = "";
+  const message = "Введіть число більше 0";
+  let chinaString = "";
 
-	while (chinaString.length < length) {
-		const promise = new Promise((resolve) => {
-			setTimeout(() => {
-				const string = Date.now().toString().slice(-5);
-				const chinaCharacter = String.fromCharCode(string);
-				resolve(chinaCharacter);
-			}, 50);
-		});
+  if (!length || length <= 0) return message;
 
-		chinaString += await promise;
-	}
+  while (chinaString.length < length) {
+    const promise = new Promise((resolve) => {
+      setTimeout(() => {
+        const string = Date.now().toString().slice(-5);
+        const chinaCharacter = String.fromCharCode(string);
+        resolve(chinaCharacter);
+      }, 50);
+    });
 
-	return chinaString;
+    chinaString += await promise;
+  }
+
+  return chinaString;
 }
-
-// getRandomChinese().then((result) => {
-// 	console.log(result);
-// });

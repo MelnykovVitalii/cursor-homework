@@ -1,35 +1,75 @@
 * {
-	margin: 0px;
-	padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
-
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  height: 100%;
+  text-align: center;
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+}
 .container {
-	text-align: center;
+  height: 100%;
+  background: rgb(000, 000, 000, 0.8);
 }
-
 .head > p {
-	padding: 20px;
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 30px;
+  padding: 20px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 36px;
+  color: #fff;
 }
 
 .input-block {
-	margin-top: 200px;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	padding: 50px 0px;
+  margin-top: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 50px 0px;
 }
-
+.input-body {
+  display: flex;
+  justify-content: center;
+}
 #input {
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 16px;
-	width: 100px;
-	height: 30px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  /* width: 70px; */
+  padding: 5px 10px;
+  margin: 0 5px;
+  box-sizing: border-box;
 }
 
-#get-button {
-	height: 34px;
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 16px;
+.button {
+  cursor: pointer;
+  margin: 0 5px;
+  background: #000;
+  color: #ccc;
+  padding: 10px 15px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  border: 1px solid #000;
+  transition: 0.2s;
+}
+
+.button:active {
+  transform: scale(0.9);
+  transition: 0.2s;
+}
+.button:hover {
+  color: red;
+  border: 1px solid red;
+}
+.output-block {
+  padding: 30px;
+}
+.output {
+  padding: 20px;
+  color: #90a4ae;
+  /* background: rgb(255, 255, 255, 0.3); */
+  font-size: 50px;
+  font-family: "Noto Sans JP", sans-serif;
 }
