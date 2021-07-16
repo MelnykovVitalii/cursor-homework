@@ -6,7 +6,7 @@ const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 //  Функція повинна викликатись через call та працювати з даними через this
 
 function getMyTaxes(salary) {
-	return Number((this.tax * salary).toFixed(2));
+  return Number((this.tax * salary).toFixed(2));
 }
 
 console.log("function1 :", getMyTaxes.call(latvia, 20));
@@ -15,7 +15,7 @@ console.log("function1 :", getMyTaxes.call(latvia, 20));
 //  Функція повинна викликатись через call та працювати з даними через this
 
 function getMiddleTaxes() {
-	return Number((this.tax * this.middleSalary).toFixed(2));
+  return Number((this.tax * this.middleSalary).toFixed(2));
 }
 
 console.log("function2 :", getMiddleTaxes.call(litva));
@@ -24,7 +24,7 @@ console.log("function2 :", getMiddleTaxes.call(litva));
 // Функція повинна викликатись через call та працювати з даними через this
 
 function getTotalTaxes() {
-	return Number((this.tax * this.middleSalary * this.vacancies).toFixed(2));
+  return Number((this.tax * this.middleSalary * this.vacancies).toFixed(2));
 }
 
 console.log("function3 :", getTotalTaxes.call(ukraine));
@@ -34,20 +34,22 @@ console.log("function3 :", getTotalTaxes.call(ukraine));
 // profit = salary - taxes;
 
 function getMySalary(country) {
-	const minSalary = 1500;
-	const maxSalary = 2000;
-	const salary = Math.round(
-		Math.random() * (maxSalary - minSalary) + minSalary
-	);
-	const taxes = Number((country.tax * salary).toFixed(2));
-	const profit = salary - taxes;
-	const mySalary = {
-		salary: salary,
-		taxes: taxes,
-		profit: profit,
-	};
-	return mySalary;
+  setInterval(() => {
+    const minSalary = 1500;
+    const maxSalary = 2000;
+    const salary = Math.round(
+      Math.random() * (maxSalary - minSalary) + minSalary
+    );
+    const taxes = Number((country.tax * salary).toFixed(2));
+    const profit = salary - taxes;
+
+    const mySalary = {
+      salary: salary,
+      taxes: taxes,
+      profit: profit,
+    };
+    console.log("function4 :", mySalary);
+    return mySalary;
+  }, 10000);
 }
-setInterval(() => {
-	console.log("function4 :", getMySalary(litva));
-}, 10000);
+getMySalary(litva);
