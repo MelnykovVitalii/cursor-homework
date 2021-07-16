@@ -4,41 +4,35 @@ function randomColor() {
   const firstNumber = Math.trunc(Math.random() * 256);
   const secondNumber = Math.trunc(Math.random() * 256);
   const thirdNumber = Math.trunc(Math.random() * 256);
+
   return `rgb(${firstNumber},${secondNumber},${thirdNumber})`;
 }
 
-function createParentBlock() {
-  const parentBlock = document.createElement("div");
-  parentBlock.classList.add("row");
-  return parentBlock;
+function createBlock(size, color) {
+  const block = document.createElement("div");
+
+  block.classList.add("row");
+  block.style.width = `${size}px`;
+  block.style.height = `${size}px`;
+  block.style.backgroundColor = color;
+  return block;
 }
 
-function createChildBlock(size, color) {
-  const childBlock = document.createElement("div");
-  childBlock.classList.add("colum");
-  childBlock.style.width = `${size}px`;
-  childBlock.style.height = `${size}px`;
-  childBlock.style.backgroundColor = color;
-  return childBlock;
-}
+function generateBlocks(size) {
+  wrapper.style["max-width"] = `${size * 5}px`;
+  const blocksQuantity = 25;
 
-function generateBlocks(size, rows, colums) {
-  for (let i = 0; i < rows; i++) {
-    const rowDiv = createParentBlock();
-
-    for (let j = 0; j < colums; j++) {
-      const columDiv = createChildBlock(size, randomColor());
-      rowDiv.append(columDiv);
-    }
-
-    wrapper.append(rowDiv);
+  for (let i = 0; i < blocksQuantity; i++) {
+    const block = createBlock(size, randomColor());
+    wrapper.append(block);
   }
 }
 
-generateBlocks(50, 5, 5);
+generateBlocks(50);
 
 function generateBlocksInterval() {
-  const arrayNewBlocks = document.querySelectorAll(".colum");
+  const arrayNewBlocks = document.querySelectorAll(".row");
+
   setInterval(() => {
     arrayNewBlocks.forEach((block) => {
       block.style.backgroundColor = randomColor();
