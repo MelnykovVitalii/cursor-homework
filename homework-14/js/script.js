@@ -40,7 +40,7 @@ btnUp.addEventListener("click", () => {
 		fontSize = fontGenerator.next("up").value;
 		fontBlock.style.fontSize = `${fontSize}px`;
 	} else {
-		fontBlock.style["font-size"] = fontSize;
+		fontBlock.style.fontSize = fontSize;
 	}
 });
 
@@ -51,6 +51,6 @@ btnDown.addEventListener("click", () => {
 		fontSize = fontGenerator.next("down").value;
 		fontBlock.style.fontSize = `${fontSize}px`;
 	} else {
-		fontBlock.style["font-size"] = fontSize;
+		fontBlock.style.fontSize = fontSize;
 	}
 });
