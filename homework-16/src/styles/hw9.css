@@ -1,0 +1,11 @@
+.square-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 10px 0px;
+}
+.row {
+	display: flex;
+}
