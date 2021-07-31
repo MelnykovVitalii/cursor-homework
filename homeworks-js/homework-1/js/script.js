@@ -6,40 +6,43 @@ const clientSum = 500;
 // Base
 
 // Максимальне та мінімальне значення
-const maxValue = Math.max(PROCESSOR,MOTHERBOARD,VIDEOCARD);
+const maxValue = Math.max(PROCESSOR, MOTHERBOARD, VIDEOCARD);
 const minValue = Math.min(PROCESSOR, MOTHERBOARD, VIDEOCARD);
 
 // Вартість всіх товарів
 const totalPrice = PROCESSOR + MOTHERBOARD + VIDEOCARD;
 
 // Вартість без копійок та округлена в меньшу сторону
-const totalPriceWithoutCoins = Math.trunc(PROCESSOR) + Math.trunc(MOTHERBOARD) + Math.trunc(VIDEOCARD);
-const totalPriceFloor = Math.floor(totalPriceWithoutCoins/100)*100;
+const totalPriceWithoutCoins =
+	Math.trunc(PROCESSOR) + Math.trunc(MOTHERBOARD) + Math.trunc(VIDEOCARD);
+const totalPriceFloor = Math.floor(totalPriceWithoutCoins / 100) * 100;
 
-//Вся вартість округлена до сотень
-const totalPriceRound = Math.round(totalPrice/100)*100;
+// Вся вартість округлена до сотень
+const totalPriceRound = Math.round(totalPrice / 100) * 100;
 
 // Парна чи непарна сумма
-const isEven = (totalPriceFloor % 2 == 0);
+const isEven = totalPriceFloor % 2 == 0;
 
-// Решта з 500 грн 
+// Решта з 500 грн
 const rest = clientSum - totalPrice;
 
 // Середня ціна
-const averagePrice = +((totalPrice/3).toFixed(2));
+const averagePrice = +(totalPrice / 3).toFixed(2);
 
 // Знижка
-const discount = Math.trunc(Math.random()*100);
+const discount = Math.trunc(Math.random() * 100);
 
 // Сума знижки зі знижкою
-const priceWithDiscount = +((totalPrice - ((totalPrice*discount)/100)).toFixed(2));
+const priceWithDiscount = +(totalPrice - (totalPrice * discount) / 100).toFixed(
+	2
+);
 
 // Прибуток
-const profit = +(((totalPrice/2) - ((totalPrice*discount)/100)).toFixed(2));
+const profit = +(totalPrice / 2 - (totalPrice * discount) / 100).toFixed(2);
 
 // Advanced
 
-const list = document.querySelector('.list-block');
+const list = document.querySelector(".list-block");
 
 list.innerHTML = `<ul>
                     <li>Максимальна ціна: ${maxValue}</li>
@@ -53,4 +56,4 @@ list.innerHTML = `<ul>
                     <li>Знижка: ${discount}%</li>
                     <li>Сума знижки зі знижкою: ${priceWithDiscount}</li>
                     <li>Прибуток: ${profit}</li>
-                  </ul>`
+                  </ul>`;
